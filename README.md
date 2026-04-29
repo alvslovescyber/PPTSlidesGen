@@ -1,10 +1,23 @@
 # Worshippy
 
-**Worship lyrics decks, done.** Build a polished PowerPoint presentation for your worship set in minutes — no design skills required.
+**Worship lyrics decks, done.** — a fast, browser-only tool for worship leaders to build polished PowerPoint slide decks from song lyrics, with zero sign-up and zero server.
 
-Add songs one by one or paste a full set list, drop in your lyrics, tweak a few slide settings, and download a clean, editable `.pptx` file ready for Sunday morning.
+**[Try it live →](https://alvslovescyber.github.io/PPTSlidesGen/)**
 
-**[Try it live](https://alvslovescyber.github.io/PPTSlidesGen/)**
+---
+
+## What it does
+
+Type a set list, paste lyrics, download a `.pptx`. That's it.
+
+- **Smart song search** — start typing a title and Worshippy matches it against a built-in catalog of worship songs, showing the artist and a confidence score
+- **Lyrics editor** — paste raw lyrics with optional section headers like `[Verse 1]`, `[Chorus]`, `[Bridge]` for best slide splits
+- **Auto-format** — automatically detects section breaks so you don't have to mark every line
+- **Bulk paste** — paste lyrics for all songs at once from a single modal
+- **Slide settings** — choose lines per slide (2 / 3 / 4), font (Calibri / Aptos / Arial), text size, colour tone, and side margins
+- **Fully editable output** — the downloaded `.pptx` is a standard PowerPoint file, so your team can tweak it in any presentation app
+- **Session autosave** — your set list is saved in `sessionStorage` and restored if you accidentally refresh the tab
+- **No backend, no account** — everything runs in the browser; nothing leaves your device
 
 ---
 
@@ -14,42 +27,39 @@ Add songs one by one or paste a full set list, drop in your lyrics, tweak a few 
 
 ![Home screen](public/screenshots/01-home.png)
 
-### Add a song and paste lyrics
+### Song search with autocomplete
 
-![Song added, paste lyrics](public/screenshots/03-song-added.png)
+![Song search](public/screenshots/02-search.png)
 
-### Song ready
+### Adding a song and pasting lyrics
 
-![Song resolved and ready](public/screenshots/06-ready-to-download.png)
+![Adding a song](public/screenshots/03-song-added.png)
 
-### Full set list — all songs ready to download
-
-![Multi-song set list, all ready](public/screenshots/07-multi-song-ready.png)
+![Lyrics editor](public/screenshots/04-lyrics-pasted.png)
 
 ### Slide settings panel
 
 ![Slide settings](public/screenshots/05-settings.png)
 
+### Song ready to download
+
+![Song ready](public/screenshots/06-ready-to-download.png)
+
+### Full set list ready
+
+![Multi-song set list ready](public/screenshots/07-multi-song-ready.png)
+
 ---
 
-## How it works
+## How to use
 
-1. **Type a song title** (or paste a comma/newline-separated set list) — Worshippy recognises common worship songs and auto-fills the artist name.
-2. **Paste the lyrics** — use `[Verse 1]`, `[Chorus]`, `[Bridge]` headers for best results. The auto-format button can add them for you.
-3. **Tweak slide settings** — choose lines per slide (2–4), font, lyric size, colour, and margins.
-4. **Download** — get a `.pptx` file with one lyric block per slide, ready to open in PowerPoint or Google Slides.
+1. **Type a song title** in the search box and press Enter (or click a suggestion)
+2. **Paste lyrics** into the editor that opens below the song card — add `[Verse 1]`, `[Chorus]` etc. for better slide breaks, or hit **Auto-format** to let Worshippy guess the structure
+3. **Repeat** for each song in your set
+4. Optionally open **Slide settings** to customise font, size, lines per slide and margins
+5. Hit **Download .pptx** — a ready-to-present PowerPoint lands in your Downloads folder
 
----
-
-## Features
-
-- Search a built-in catalog of hundreds of worship songs — artist names filled in automatically
-- Paste a full set list at once with "Paste a set list"
-- Bulk-paste lyrics for every song in one modal
-- Session auto-save — refresh without losing your work
-- Fully client-side — nothing leaves your browser
-- Dark, clean UI built for low-light stage environments
-- Configurable slide layout: lines per slide, font (Calibri / Aptos / Arial), text size, colour (Soft / Pure), and margins
+> **Tip:** Got a full set list? Click **Paste a set list** to add all songs at once, then use **Bulk paste lyrics** to fill them in one go.
 
 ---
 
@@ -62,24 +72,27 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-```bash
-npm run test      # unit tests
-npm run lint      # ESLint
-npm run format    # Prettier
-```
+### Other scripts
 
----
-
-## Deployment
-
-The app deploys automatically to GitHub Pages on every push to `main` via `.github/workflows/deploy-pages.yml`. The base path is set dynamically from the repository name, so no manual config is needed after a rename.
+| Command | Description |
+|---|---|
+| `npm run build` | Production build |
+| `npm run test` | Run unit tests (Vitest) |
+| `npm run lint` | ESLint |
+| `npm run format` | Prettier |
 
 ---
 
 ## Tech stack
 
-- [Next.js 16](https://nextjs.org/) (static export)
+- [Next.js 16](https://nextjs.org/) (static export for GitHub Pages)
+- [React 19](https://react.dev/)
 - [Tailwind CSS v4](https://tailwindcss.com/)
-- [pptxgenjs](https://gitbrent.github.io/PptxGenJS/) for slide generation
+- [PptxGenJS](https://gitbrent.github.io/PptxGenJS/) for `.pptx` generation
 - [Framer Motion](https://www.framer.com/motion/) for animations
-- [Vitest](https://vitest.dev/) for unit tests
+- [Font Awesome](https://fontawesome.com/) icons
+- [Vitest](https://vitest.dev/) for testing
+
+---
+
+Built by [Alvis](https://github.com/alvslovescyber).
