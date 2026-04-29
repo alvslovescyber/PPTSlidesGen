@@ -74,12 +74,12 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Other scripts
 
-| Command | Description |
-|---|---|
-| `npm run build` | Production build |
-| `npm run test` | Run unit tests (Vitest) |
-| `npm run lint` | ESLint |
-| `npm run format` | Prettier |
+| Command          | Description             |
+| ---------------- | ----------------------- |
+| `npm run build`  | Production build        |
+| `npm run test`   | Run unit tests (Vitest) |
+| `npm run lint`   | ESLint                  |
+| `npm run format` | Prettier                |
 
 ---
 
